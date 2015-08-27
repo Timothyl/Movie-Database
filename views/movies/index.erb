@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Movie List</title>
+
+  </head>
+
+  <body>
+    <h1>Movie Catalong</h1>
+    <br>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+        <th>Genre</th>
+        <th>Studio</th>
+      </tr>
+      <% movie_list.each do |movie_info| %>
+      <tr>
+        <td><a href= "/movies/<%= movie_info['id'] %>"><%= movie_info['title'] %></a></td>
+        <td><%= movie_info['year'] %></td>
+        <td><%= movie_info['rating'] %></td>
+        <td><%= movie_info['genre'] %></td>
+        <td><%= movie_info['studio'] %></td>
+      </tr>
+      <% end %>
+    </table>
+  </body>
+</html>

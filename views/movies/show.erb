@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Movie Page</title>
+
+  </head>
+
+  <body>
+    <h1><%= movie_info['title'] %></h1>
+    <p>Genre: <%= movie_info['genre'] %></p>
+    <p>Year: <%= movie_info['year'] %></p>
+    <p>Rating: <%= movie_info['rating'] %></p>
+    <p>Studio: <%= movie_info['studio'] %></p>
+    <br>
+    <table>
+      <tr>
+        <th>Actor</th>
+        <th>Character</th>
+      </tr>
+      <% cast_list.each do |cast_info| %>
+      <tr>
+        <td><a href = "/actors/<%= cast_info['id'] %>"><%= cast_info['name'] %></a></td>
+        <td><%= cast_info['character'] %></td>
+      </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
